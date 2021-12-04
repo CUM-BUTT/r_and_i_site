@@ -1,0 +1,418 @@
+{% extends "main/base_page.html" %}
+{% block body %}
+<!DOCTYPE html>
+<!-- saved from url=(0018)https://tadapp.ru/ -->
+
+<body><span id="warning-container"><i data-reactroot=""></i></span>
+    <header class="head_home">
+        <nav class="navbar navbar-expand-lg navbar-dark head_bar">
+            <div class="container">
+                <a class="navbar-brand" href="https://tadapp.ru/">
+                    <img alt="Tadapp logo" src="../../static/main/Tadapp_first_page/logo.svg" class="logo">
+                </a>
+                <div class="">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://tadapp.ru/news">
+                                Новости
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://tadapp.ru/help">Помощь</a>
+                        </li>
+                        <a href="https://my.tadapp.ru/#/my" class="btn btn btn-light ms-4">Войти в аккаунт</a>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="home_bg">
+    <div class="container">
+        <img src="../../static/main/Tadapp_first_page/cards.png" class="img_bg">
+        <div class="row">
+            <div class="col-12 col-sm-10 col-md-8">
+                <h1 class="title text-white mb-4" style="">Создайте приложение из сайта<br></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <h2 class="lead">Онлайн сервис, который конвертирует сайт в мобильное приложение для Android и iOS за 5 минут. Без рекламы и с PUSH рассылкой.</h2>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <div class="row">
+                    <form action="/url_input/" method="post">{% csrf_token %}
+                        <div class="col-md-9">
+                            <div class="form-group mb-0">
+                                <input type="text" class="form-control form-control-lg site" name="url" id="url" placeholder="Введите полный адрес сайта" autocomplete="off">
+                                <small id="emailHelp" class="form-text helper_text">Например, https://yandex.ru</small>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="submit" onclick="nextCaptcha()" class="btn btn-primary btn-lg btn-block">Продолжить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <img src="../../static/main/Tadapp_first_page/os.svg" alt="Tadapp apps" class="os_imgs">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="tech">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h4 class="tech_title mb-5">
+                    Более <strong>12000</strong> пользователей с 2019 года выбрали технологии Tadapp Native
+                </h4>
+                <ul class="list-unstyled d-flex align-items-center flex-wrap justify-content-center">
+                    <li>
+                        <img src="../../static/main/Tadapp_first_page/react.png" alt="React" height="50">
+                    </li>
+                    <li class="ms-5">
+                        <img src="../../static/main/Tadapp_first_page/swift.png" alt="Swift" height="50">
+                    </li>
+                    <li class="ms-5">
+                        <img src="../../static/main/Tadapp_first_page/onesignal.png" alt="OneSignal" height="50">
+                    </li>
+                    <li class="ms-5">
+                        <img src="../../static/main/Tadapp_first_page/firebase.png" alt="Google Firebase" height="50">
+                    </li>
+                    <li class="ms-5">
+                        <img src="../../static/main/Tadapp_first_page/java.png" alt="Java" height="50">
+                    </li>
+                    <li class="ms-5">
+                        <img src="../../static/main/Tadapp_first_page/kotlin.png" alt="Kotlin" height="50">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home_features">
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-12 col-sm-6 col-lg-4 d-flex">
+                <div class="card feature_card">
+                    <div class="card-header text-center">
+                        <h3 class="feature-title">Лучшая цена</h3>
+                    </div>
+                    <div class="text-center">
+                        <img alt="Лучшая цена" src="../../static/main/Tadapp_first_page/credit.png" class="feature_image">
+                    </div>
+                    <div class="card-body text-center text-blue-grey">
+                        <p>Попробовать всегда можно бесплатно - вы можете создавать неограниченное количество тестовых версий. Стоимость активации - символическая</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 d-flex">
+                <div class="card feature_card">
+                    <div class="card-header text-center">
+                        <h3 class="feature-title">Полностью онлайн</h3>
+                    </div>
+                    <div class="text-center">
+                        <img alt="Полностью онлайн" src="../../static/main/Tadapp_first_page/web.png" class="feature_image">
+                    </div>
+                    <div class="card-body text-center text-blue-grey">
+                        <p>Все приложения создаются самостоятельно в Личном кабинете без нашего участия. Вам не потребуются знания программирования</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 d-flex">
+                <div class="card feature_card">
+                    <div class="card-header text-center">
+                        <h3 class="feature-title">Сборка 24/7</h3>
+                    </div>
+                    <div class="text-center">
+                        <img alt="Сборка 24/7" src="../../static/main/Tadapp_first_page/cpu.png" class="feature_image">
+                    </div>
+                    <div class="card-body text-center text-blue-grey">
+                        <p>На сборку приложения требуется обычно не более 5 минут. Просто запустите процесс сборки приложения и мы отправим email, когда все будет готово</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-4">
+            <div class="col-12 col-sm-6 col-lg-4 d-flex">
+                <div class="card feature_card">
+                    <div class="card-header text-center">
+                        <h3 class="feature-title">Все платформы</h3>
+                    </div>
+                    <div class="text-center">
+                        <img alt="Все платформы" src="../../static/main/Tadapp_first_page/pack.png" class="feature_image">
+                    </div>
+                    <div class="card-body text-center text-blue-grey">
+                        <p>Один сайт - 2 приложения. Мы подготовим файлы для Android и Apple iOS. Подписанные приложения готовы для публикации во всех маркетах</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 d-flex">
+                <div class="card feature_card">
+                    <div class="card-header text-center">
+                        <h3 class="feature-title">Бесплатные PUSH</h3>
+                    </div>
+                    <div class="text-center">
+                        <img alt="Бесплатные PUSH" src="../../static/main/Tadapp_first_page/push.png" class="feature_image">
+                    </div>
+                    <div class="card-body text-center text-blue-grey">
+                        <p>Отправляйте своим пользователям PUSH рассылки прямо из Личного кабинета. Мгновенная доставка и бесплатно для любых объёмов</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 d-flex">
+                <div class="card feature_card">
+                    <div class="card-header text-center">
+                        <h3 class="feature-title">Брендирование</h3>
+                    </div>
+                    <div class="text-center">
+                        <img alt="Брендирование" src="../../static/main/Tadapp_first_page/brand.png" class="feature_image">
+                    </div>
+                    <div class="card-body text-center text-blue-grey">
+                        <p>Используйте собственные изображения для создания иконок и логотипов к приложению. Мы не используем свои копирайты в Ваших приложениях</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-4">
+            <div class="col-12 col-sm-6 col-lg-4 d-flex">
+                <div class="card feature_card">
+                    <div class="card-header text-center">
+                        <h3 class="feature-title">Своя подпись</h3>
+                    </div>
+                    <div class="text-center">
+                        <img alt="Своя подпись" src="../../static/main/Tadapp_first_page/cert.png" class="feature_image">
+                    </div>
+                    <div class="card-body text-center text-blue-grey">
+                        <p>Подписывайте приложения собственным сертификатом разработчика или воспользуйтесь нашим (подпись Tadapp доступна для приложений Android)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 d-flex">
+                <div class="card feature_card">
+                    <div class="card-header text-center">
+                        <h3 class="feature-title">Realtime обновление</h3>
+                    </div>
+                    <div class="text-center">
+                        <img alt="Realtime обновление" src="../../static/main/Tadapp_first_page/refresh.png" class="feature_image">
+                    </div>
+                    <div class="card-body text-center text-blue-grey">
+                        <p>Не нужно постоянно обновлять приложение — весь контент в приложении обновляется синхронно с контентом на вашем сайте</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 d-flex">
+                <div class="card feature_card">
+                    <div class="card-header text-center">
+                        <h3 class="feature-title">Поддержка</h3>
+                    </div>
+                    <div class="text-center">
+                        <img alt="Поддержка" src="../../static/main/Tadapp_first_page/help.png" class="feature_image">
+                    </div>
+                    <div class="card-body text-center text-blue-grey">
+                        <p>Не знаете с чего начать или есть проблемы с приложением? Мы всегда поможем - просто дайте нам знать через чат в Личном кабинете</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--section class="home_features_white bg-snow">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="text-night mb-5">Шаблоны приложений для Вашего сайта</h2>
+            </div>
+        </div>
+        <div class="row mt-5 mb-5">
+            <div class="col-md-4 text-center">
+                <img src="../../static/main/Tadapp_first_page/drawer.svg" class="template_img">
+                <h4 class="mb-4">Drawer</h4>
+                <p class="text-blue-grey">
+                    Макет с возможностью вызыва левого выдвижного меню, в котором можно указать ссылки на разделы Вашего сайта. Подходит для крупных порталов и проектов, где есть крупная система навигации
+                </p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="../../static/main/Tadapp_first_page/navbar.svg" class="template_img">
+                <h4 class="mb-4">Navbar</h4>
+                <p class="text-blue-grey">
+                    Поверх вашего сайта на всех страницах располагается фиксированный блок с названием приложения, кнопкой «Поделиться», навигация (кнопки «Вперед и назад»). Подходит для большинства проектов
+                </p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="../../static/main/Tadapp_first_page/blank.svg" class="template_img">
+                <h4 class="mb-4">Blank</h4>
+                <p class="text-blue-grey">
+                    Ничего лишнего - только Ваш сайт. <br>Идеально подходит для HTML5 игр и для сайтов, у которых есть хорошая мобильная версия и 100% отзывчивость на мобильных устройствах
+                </p>
+            </div>
+        </div>
+    </div>
+</section-->
+
+<section class="home_features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="text-night mb-5">Простой и понятный интерфейс</h2>
+            </div>
+            <div class="screen-interface">
+                <div class="screen-item">
+                    <img src="../../static/main/Tadapp_first_page/list.png" class="w-100 screen-shadow mb-3">
+                    <span>Управление</span>
+                    <b>Все приложения в 1 аккаунте</b>
+                    <p class="text-blue-grey">Все приложения хранятся в одном аккаунте - легко изменить и начать рассылку</p>
+                </div>
+                <div class="screen-item active">
+                    <img src="../../static/main/Tadapp_first_page/steps.png" class="w-100 screen-shadow mb-3">
+                    <span>Создание</span>
+                    <b>Поэтапный процесс создания</b>
+                    <p class="text-blue-grey">Выполните 4 простых шага и получите файлы приложения. Мы подскажем, что делать</p>
+                </div>
+                <div class="screen-item">
+                    <img src="../../static/main/Tadapp_first_page/build.png" class="w-100 screen-shadow mb-3">
+                    <span>Сборки</span>
+                    <b>Создавайте и обновляйте</b>
+                    <p class="text-blue-grey">Хотите добавить новую иконку? Создайте новую сборку и обновите приложение</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home_features_white">
+    <div class="container">
+        <img src="../../static/main/Tadapp_first_page/box.png" class="img_bg">
+        <div class="row mb-5">
+            <div class="col-12 col-sm-10 col-md-8">
+                <h2 class="title text-night mb-4" style="">Зачем конвертировать сайт в приложение?</h2>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <h4>Продвижение в поисковых сетях</h4>
+                <p class="text-blue-grey">Размещая значки приложений на своем сайте, вы получаете преимущества в поисковой выдачи для мобильного трафика + возможность использовать сниппеты.</p>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <h4>Снижение расходов на рекламу сайта</h4>
+                <p class="text-blue-grey">Привлекайте мобильный трафик из маркетов - очень часто он в разы дешевле, чем обычный трафик.</p>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <h4>Новый канал связи</h4>
+                <p class="text-blue-grey">Используйте PUSH рассылки вместо SMS рассылок. Это дешевле и привлекательнее для пользователя.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home_features_snow">
+    <div class="container">
+        <img src="../../static/main/Tadapp_first_page/testing.png" class="img_bg_left">
+        <div class="row mb-5 justify-content-end">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <h2 class="title text-night mb-4" style="">Легко протестировать перед сборкой</h2>
+            </div>
+        </div>
+        <div class="row mb-4 justify-content-end">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <h4>На сайте</h4>
+                <p class="text-blue-grey">Запустим Ваше приложение на реальном устройстве (Google Nexus или iPhone 7) и покажем результат онлайн прямо в Личном кабинете.</p>
+            </div>
+        </div>
+        <div class="row mb-4 justify-content-end">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <h4>В приложении Expo Go</h4>
+                <p class="text-blue-grey">Скачайте приложение Expo Go, отсканируйте QR код вашего приложение и проверьте работу перед сборкой на своем устройстве.</p>
+            </div>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <h4>Создайте сборку</h4>
+                <p class="text-blue-grey">Вы можете создавать неограниченное количество сборок приложения в поиске идеального дизайна - выбор за Вами!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="random_section">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-12 col-sm-12 col-md-12">
+                <h2 class="title mb-2" style="">Сервис №1 в Европе из России</h2>
+                <p class="lead">Первые на рынке автоматического создания нативных приложений из сайта</p>
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="https://my.tadapp.ru/#/my" class="btn btn-success btn-lg">Перейти в кабинет</a>
+        </div>
+    </div>
+</section>
+
+<script>
+    $('.screen-item').click( function(){
+        //$(this).tab('show');
+        $('.screen-item').removeClass('active');
+        $(this).addClass("active");
+    });
+    $("a[href='#top']").click(function() {
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+    });
+</script>
+
+    <footer>
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <div class="d-flex justify-content-between" style="align-items: flex-start">
+                        <img alt="Tadapp logo" src="../../static/main/Tadapp_first_page/footer_logo.svg">
+                        <p>Copyright © 2019 - 2021</p>
+                    </div>
+                </div>
+                <div>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="https://tadapp.ru/legal">Условия соглашения</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://tadapp.ru/legal/privacy">Политика конфиденциальности</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script src="../../static/main/Tadapp_first_page/jquery-ui.min.js"></script>
+<script src="../../static/main/Tadapp_first_page/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="../../static/main/Tadapp_first_page/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="../../static/main/Tadapp_first_page/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+<script>
+    $(".site").on('keyup', function (e) {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+            // Do something
+            window.open("https://my.tadapp.ru/#/build/new?site_link=" + $('#site_name').val());
+        }
+    });
+    function nextCaptcha()
+    {
+        window.open("https://my.tadapp.ru/#/build/new?site_link=" + $('#site_name').val());
+    }
+</script>
+
+<div id="wot-new-assistant-container"><div data-reactroot=""></div></div><div at-magnifier-wrapper=""><div class="at-theme-light"><div class="at-base notranslate" translate="no"><div class="Z1-AJ" style="top: 0px; left: 0px;"></div></div></div></div></body>
+
+</html>
+{% endblock %}

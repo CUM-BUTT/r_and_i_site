@@ -1,0 +1,78 @@
+{% extends "main/base_page.html" %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% block body %}
+<body>
+    <section class="home_features_white">
+    <div class="container">
+        <div class="row text-center" style="margin-bottom: 50px">
+            <div class="col-12 col-sm-12 col-md-12">
+                <h2 class="title text-night mb-2" style="">Дешевле и быстрее любого фрилансера</h2>
+                <p class="text-blue-grey">Оплата единоразово без абонентской платы, подписок и скрытых условий</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="card">
+                    <div class="head_price standard_price text-center">
+                        <h4>Активация Стандарт</h4>
+                        <h3>890 ₽</h3>
+                        <p><small>При оплате в течении 2 дней, далее 1190 ₽</small></p>
+                    </div>
+                    <ul class="list-group list-group-flush text-center">
+                        <li class="list-group-item">Android и Apple iOS</li>
+                        <li class="list-group-item">Неограниченное кол-во сборок</li>
+                        <li class="list-group-item">Без рекламы</li>
+                        <li class="list-group-item">Ваша иконка и экран загрузки (заставка)</li>
+                        <li class="list-group-item text-primary">Нет PUSH рассылки</li>
+                        <li class="list-group-item text-primary">Нет монетизации через AdMob</li>
+                        <li class="list-group-item text-primary">Нет статистики Google analytics</li>
+                        <li class="list-group-item text-primary">Стандартная поддержка</li>
+                        <li class="list-group-item text-primary" style="padding: 20px">
+                            <form action="to_payments_standart">
+                                <input type="submit" class="btn btn-success btn-lg">
+                                    Начать конвертацию
+                                </input>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="card">
+                    <div class="head_price pro_price text-center">
+                        <h4>Активация PRO</h4>
+                        <h3>1290 ₽</h3>
+                        <p><small>При оплате в течении 2 дней, далее 1790 ₽</small></p>
+                    </div>
+                    <ul class="list-group list-group-flush text-center">
+                        <li class="list-group-item">Android и Apple iOS</li>
+                        <li class="list-group-item">Неограниченное кол-во сборок</li>
+                        <li class="list-group-item">Без рекламы</li>
+                        <li class="list-group-item">Ваша иконка и экран загрузки (заставка)</li>
+                        <li class="list-group-item">Плагин PUSH рассылки</li>
+                        <li class="list-group-item">Плагин Реклама AdMob</li>
+                        <li class="list-group-item">Плагин Google analytics</li>
+                        <li class="list-group-item">Приоритетная поддержка</li>
+                        <li class="list-group-item text-primary" style="padding: 20px">
+                            <form action="to_payments_pro">
+                                <input type="submit" class="btn btn-success btn-lg">
+                                    Начать конвертацию
+                                </input>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+{% endblock %}
+</html>

@@ -1,0 +1,24 @@
+{% extends "main/base_page.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RIdt main page</title>
+</head>
+
+{% block body %}
+    <body>
+        <form action="/url_input/" method="post">{% csrf_token %}
+            <p><b>Your site href:</b><br>
+                <label>
+                    <input name="url" id="url" placeholder="https://example.com" type="text" size="40">
+                </label>
+            </p>
+        </form>
+    </body>
+    {% load static %}
+    <img src="{% static 'main/assets/background.jpg' %}">
+{% endblock %}
+
+
+</html>
