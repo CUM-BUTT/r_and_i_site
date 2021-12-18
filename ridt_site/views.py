@@ -13,7 +13,7 @@ def RidtMain(request):
 
 def UrlInput(request,):
     url = request.POST.get('url', '')
-    return render(request, 'main/constructor.html', context={'url': url})
+    return render(request, 'main/builder.html', context={'url': url})
 
 
 def Constructor(request,):
@@ -27,3 +27,11 @@ def Constructor(request,):
     #open('cat.jpeg', 'wb').write(image)
 
     return render(request, 'main/rate_choise.html')
+
+def PaymentsPro(request):
+    # TODO add builder code
+    return render(request, 'main/home.html')
+
+def PaymentsStandart(request):
+    # TODO add builder code
+    return render(request, 'main/home.html')

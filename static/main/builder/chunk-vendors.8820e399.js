@@ -50947,7 +50947,7 @@
                     ratingFull: "star",
                     ratingHalf: "star_half",
                     loading: "cached",
-                    first: "first_page",
+                    first: "home",
                     last: "last_page",
                     unfold: "unfold_more",
                     file: "attach_file",

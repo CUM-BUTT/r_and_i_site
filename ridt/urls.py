@@ -23,4 +23,6 @@ urlpatterns = [
     path('', views.RidtMain),
     path('url_input/', views.UrlInput),
     path('url_input/constructor/', views.Constructor),
+    path('rate_choise/pro', views.PaymentsPro),
+    path('rate_choise/standert', views.PaymentsStandart),
 ]
