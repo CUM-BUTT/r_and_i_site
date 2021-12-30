@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ridt_site.apps.RidtSiteConfig',
+
+    #'ridt_site.apps.RidtSiteConfig',
+    'ridt_site',
+    'license_verification',
+    'app_builder',
 ]
 
 MIDDLEWARE = [

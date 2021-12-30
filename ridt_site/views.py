@@ -7,31 +7,24 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your views here.
 
-def RidtMain(request):
+def Home(request):
     return render(request, 'main/home.html')
 
 
-def UrlInput(request,):
+def GoToBuilder(request, ):
     url = request.POST.get('url', '')
     return render(request, 'main/builder.html', context={'url': url})
 
 
-def Constructor(request,):
+def Builder(request, ):
+    email = request.POST.get('email', '')
+
     url = request.POST.get('url', '')
     app_name = request.POST.get('app_name', '')
     app_id = request.POST.get('app_id', '')
     image = request.FILES['image']
 
-    image: JpegImageFile = Image.open(image)
+    image: Image = Image.open(image)
     image.save(open('cat.jpeg', 'wb'))
-    #open('cat.jpeg', 'wb').write(image)
 
-    return render(request, 'main/rate_choise.html')
-
-def PaymentsPro(request):
-    # TODO add builder code
-    return render(request, 'main/home.html')
-
-def PaymentsStandart(request):
-    # TODO add builder code
-    return render(request, 'main/home.html')
+    return render(request, 'main/success.html')
