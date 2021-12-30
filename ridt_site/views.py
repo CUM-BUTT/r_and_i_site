@@ -1,30 +1,46 @@
+import django.views
 from PIL import Image
 from PIL.JpegImagePlugin import JpegImageFile
 from django.core.files.base import ContentFile
 from django.shortcuts import render
+from django.views import View
 from django.http import HttpResponse, HttpResponseRedirect
 
 
 # Create your views here.
-
-def Home(request):
-    return render(request, 'main/home.html')
-
-
-def GoToBuilder(request, ):
-    url = request.POST.get('url', '')
-    return render(request, 'main/builder.html', context={'url': url})
+from django.views.generic import TemplateView
+from ridt_site.forms import AppForm
 
 
-def Builder(request, ):
-    email = request.POST.get('email', '')
+class Home(TemplateView):
+    template_name = 'main/home.html'
 
-    url = request.POST.get('url', '')
-    app_name = request.POST.get('app_name', '')
-    app_id = request.POST.get('app_id', '')
-    image = request.FILES['image']
+class GoToBuilder(TemplateView):
+    template_name = 'main/builder.html'
+    http_method_names = ['get', 'post']
 
-    image: Image = Image.open(image)
-    image.save(open('cat.jpeg', 'wb'))
+    def get_context_data(self, **kwargs):
+        context = super(GoToBuilder, self).get_context_data(**kwargs)
+        url = context['view'].request.GET.get('url', '')
+        form = AppForm(initial={'url': url})
+        context['form'] = form
 
-    return render(request, 'main/success.html')
+        return context
+
+
+class GoToSuccess(TemplateView):
+    template_name = 'main/builder.html'
+    http_method_names = ['get', 'post']
+
+    def get_context_data(self, **kwargs):
+        context = super(GoToSuccess, self).get_context_data(**kwargs)
+        return context
+
+    def post(self, request, *args, **kwargs):
+        form = AppForm(request.POST)
+        return render(request, 'main/success.html', {'form': form})
+
+
+
+
+

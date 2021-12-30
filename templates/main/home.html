@@ -41,7 +41,7 @@
         <div class="row mt-4">
             <div class="col-12 col-sm-10 col-md-8 col-lg-6">
                 <div class="row">
-                    <form action="/url_input/" method="post">{% csrf_token %}
+                    <form action="/url_input/" method="get">{% csrf_token %}
                         <div class="col-md-9">
                             <div class="form-group mb-0">
                                 <input type="text" class="form-control form-control-lg site" name="url" id="url" placeholder="Введите полный адрес сайта" autocomplete="off">

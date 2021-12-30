@@ -1480,57 +1480,10 @@
                                 </div>
                                 <div class="container container--fluid">
                                     <div class="row mb-5">
-                                        <div class="col-sm-12 col-md-12 col-12">
-                                            <div class="subtitle-2 mb-2">Ссылка на Ваш сайт</div>
-                                            <div class="vue-input">
-                                                <!---->
-                                                <!---->
-                                                <!---->
-                                                <input name="url" type="text" placeholder="https://r&i.ru/" value={{ url }} autocomplete="on" class="vue-input__inner">
-                                                <!---->
-                                            </div>
-                                            <span class="caption grey--text">Полная ссылка на Ваш сайт, например https://r-and-i.ru/</span>
-                                        </div>
-                                        <div class="col-sm-12 col-md-12 col-12">
-                                            <div class="subtitle-2 mb-2">email</div>
-                                            <div class="vue-input">
-                                                <!---->
-                                                <!---->
-                                                <!---->
-                                                <input name="email" type="text" placeholder="randi@r_and_i.com" autocomplete="on" class="vue-input__inner">
-                                                <!---->
-                                            </div>
-                                            <span class="caption grey--text">email на который выслать файл с приложением</span>
-                                        </div>
-                                        <div class="col-sm-12 col-md-12 col-12">
-                                            <div class="subtitle-2 mb-2">Название приложения</div>
-                                            <div class="vue-input">
-                                                <!---->
-                                                <!---->
-                                                <!---->
-                                                <input name="app_name" type="text" placeholder="Мое супер приложение" autocomplete="on" class="vue-input__inner">
-                                                <!---->
-                                            </div><span class="caption grey--text">Минимум 3 символа, макисмум - 30</span></div>
-                                            <div class="col-sm-12 col-md-6 col-12">
-                                            <div class="subtitle-2 mb-2">Идентификатор приложения</div>
-                                            <div class="vue-input">
-                                                <!---->
-                                                <!---->
-                                                <!---->
-                                                <input name="app_id" type="text" placeholder="ru.randi.app" autocomplete="on" class="vue-input__inner">
-                                                <!---->
-                                            </div><span class="caption grey--text">Идентифкатор в форме обратного домена сайта, например, ru.r-and-i.app</span></div>
-                                        <div class="col-sm-12 col-md-6 col-12">
-                                            <div class="subtitle-2 mb-2">Иконка приложения</div>
-                                            <div class="vue-input">
-                                                <!---->
-                                                <!---->
-                                                <!---->
-                                                <input name="image" type="file"
-                                                       title="загрузите фото" value="загрузите фото"
-                                                       class="vue-input__inner">
-                                                <!---->
-                                            </div><span class="caption grey--text">Картинка которая будет использована как иконка для Вашего сайта в формате jpeg</span></div>
+                                        <form action="/build/" method="post" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            {{ form }}
+                                        </form>
                                     </div>
 
                             </div>

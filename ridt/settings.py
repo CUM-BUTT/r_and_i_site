@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-hp=4@aic-=vkri^6ew1*-awsf!!89q_bs$*2$vc&90uyq@&&&q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*', ]
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #'ridt_site.apps.RidtSiteConfig',
+    'ridt',
     'ridt_site',
     'license_verification',
     'app_builder',
