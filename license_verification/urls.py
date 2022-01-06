@@ -16,10 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from ridt_site import views
+from license_verification import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('verification/', include('license_verification.urls')),
-    path('', include('ridt_site.urls')),
+    path('<slug:slug>', views.StatusView.as_view())
 ]

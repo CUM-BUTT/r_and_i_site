@@ -37,7 +37,10 @@ class GoToSuccess(TemplateView):
         return context
 
     def post(self, request, *args, **kwargs):
-        form = AppForm(request.POST)
+        form = AppForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+
         return render(request, 'main/success.html', {'form': form})
 
 
