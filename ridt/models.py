@@ -8,11 +8,11 @@ from django.db import models
 class PromoCode(models.Model):
     # promo code add free trial
     # like for 30 days
-    value = models.CharField(max_length=20, primary_key=True, default='', blank=True)
+    value = models.CharField(max_length=6, primary_key=True, default='', blank=True)
 
     description = models.TextField()
-    usage_count = models.DecimalField(decimal_places=2, max_digits=8, default=1)
-    trial_period = models.DecimalField(decimal_places=2, max_digits=8, default=30)
+    usage_count = models.IntegerField(default=1,)
+    trial_period = models.DurationField(default=datetime.timedelta(days=1,))
 
 class Price(models.Model):
     currency = models.CharField(max_length=4, default='RU')
@@ -33,7 +33,7 @@ class Application(models.Model):
     promo_code = models.ForeignKey(PromoCode, on_delete=models.DO_NOTHING,)
 
     price = models.DecimalField(decimal_places=2, max_digits=8, default=200)#models.ForeignKey(Price, on_delete=models.DO_NOTHING,)
-    next_payment_date = models.DateField(default=datetime.date.today(),)
+    next_payment_date = models.DateTimeField(default=datetime.datetime.now(),)
 
     def IsTimeToPay(self):
         return self.next_payment_date > datetime.datetime.now()

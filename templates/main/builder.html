@@ -1463,7 +1463,7 @@
                             <!---->
                         </div>
                     </header>
-                    <<form action="/build/" method="post" enctype="multipart/form-data">{% csrf_token %}
+                    <form action="/build/" data-action="/builder/" method="post" enctype="multipart/form-data">{% csrf_token %}
                         <div class="layout fill-height">
                         <main class="v-main" style="padding: 48px 0px 0px 260px;" data-booted="true">
                             <div class="v-main__wrap">
@@ -1489,7 +1489,9 @@
                             </div>
                             <footer class="v-footer v-sheet theme--light v-footer--fixed" style="left: 0px; right: 0px; bottom: 0px; padding-right: 0px; border-top: 1px solid rgba(0, 0, 0, 0.12); background: rgb(255, 255, 255);" data-booted="true">
                                 <div class="text-right col col-12">
-                                    <button type="submit" class="v-btn v-btn--has-bg theme--light v-size--default primary" style="height: 40px;"><span class="v-btn__content"> Продолжить </span></button>
+                                    <button type="submit" class="v-btn v-btn--has-bg theme--light v-size--default primary" style="height: 40px;">
+                                        <span class="v-btn__content"> Продолжить </span>
+                                    </button>
                                 </div>
                             </footer>
                             <div role="dialog" class="v-dialog__container">

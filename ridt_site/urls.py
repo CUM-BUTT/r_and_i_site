@@ -6,5 +6,6 @@ urlpatterns = [
     path('', views.Home.as_view()),
     path('home/', views.Home.as_view()),
     path('url_input/', views.GoToBuilder.as_view()),
-    path('build/', views.GoToSuccess.as_view())
+    path('build/', views.GoToSuccess.as_view()),
+    path('no_payment/', views.NoPaymentView.as_view()),
 ]

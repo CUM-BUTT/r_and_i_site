@@ -2,5 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app_builder/builder/expo/template2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app_builder/builder/expo/templates/template" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app_builder/builder/expo/templates/template2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app_builder/expo_builder/templates/expo/r_and_i_template" vcs="Git" />
   </component>
 </project>

@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
 
-from license_verification import views
+from app_builder import views
 
 urlpatterns = [
-    path('', views.StatusView.as_view())
+    path('', views.BuilderView.as_view()),
 ]

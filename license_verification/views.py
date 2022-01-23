@@ -12,7 +12,7 @@ class StatusView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(StatusView, self).get_context_data(**kwargs)
-        app = Application.objects.get(name=context['name'])
+        app = Application.objects.get(name=context['name'], url=context['url'])
         form = AppForm(instance=app)
         context['form'] = form
 

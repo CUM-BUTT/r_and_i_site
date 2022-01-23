@@ -20,6 +20,7 @@ from ridt_site import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('builder/', include('app_builder.urls')),
     path('verification/', include('license_verification.urls')),
     path('', include('ridt_site.urls')),
 ]

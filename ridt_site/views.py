@@ -1,13 +1,4 @@
-import django.views
-from PIL import Image
-from PIL.JpegImagePlugin import JpegImageFile
-from django.core.files.base import ContentFile
 from django.shortcuts import render
-from django.views import View
-from django.http import HttpResponse, HttpResponseRedirect
-
-
-# Create your views here.
 from django.views.generic import TemplateView
 from ridt_site.forms import AppForm
 
@@ -39,11 +30,12 @@ class GoToSuccess(TemplateView):
     def post(self, request, *args, **kwargs):
         form = AppForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            pass
+            form.RunBuildingSending(request)
+            #form.SaveToDB()
 
         return render(request, 'main/success.html', {'form': form})
 
 
-
-
-
+class NoPaymentView(TemplateView):
+    template_name = 'main/no_payment.html'
