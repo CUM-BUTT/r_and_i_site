@@ -18,9 +18,11 @@ class ScreenParser:
         options.headless = not False  # True
         self.driver = webdriver.Chrome(driver_path, options=options)
 
-    def GetScreen(self, url, out_path: Path):
+    def GetScreen(self, url,):
         self.driver.get(url)
-        self.driver.save_screenshot(out_path)
+        screenshot = self.driver.get_screenshot_as_png()
+
+        return screenshot
 
 
 if __name__ == '__main__':

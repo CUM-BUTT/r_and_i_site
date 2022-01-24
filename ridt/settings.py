@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'ridt_site',
     'license_verification',
     'app_builder',
+    'email_parser',
 ]
 
 REST_FRAMEWORK = {
