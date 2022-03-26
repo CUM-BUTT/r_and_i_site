@@ -14,5 +14,8 @@ sudo exp build:android
 #exp login cum_butt@mail.ru
 #exp password 14881488
 
-#apple id login cum_butt@mail.ru / mj_dd@mail.ru
-#apple id password 4su-dcX-h9X-aiu / Ra535353$
+#apple id login cum_butt@mail.ru / jomotechspb@bk.ru
+#apple id password 4su-dcX-h9X-aiu / Ra535353
+
+Ra535353$
+/home/idegtyarev/PycharmProjects/r_and_i/app_builder/builder/expo/templates/template/1.p12

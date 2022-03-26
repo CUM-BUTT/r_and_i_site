@@ -1,36 +1,50 @@
 from unittest import TestCase
-
-from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
-#import ddg3
-import yandex_search
 
 class GetHrefsFromSearch:
-    search_url = 'https://duckduckgo.com/'
+    search_url = ''
 
     def setUp(self):
         driver_path = 'yandexdriver.exe'  # path to YandexDriver
         options = webdriver.ChromeOptions()
-        options.headless = False  # True
+        options.headless = not False  # True
         self.driver = webdriver.Chrome(driver_path, options=options)
+
+        self.urls = {
+            'search': 'https://miet.ru/search',
+            'login': 'https://account.miet.ru/login?backurl=https%3A%2F%2Fmiet.ru%2Fsearch',
+            'profile': 'https://account.miet.ru/profile',
+
+        }
+        self.xpaths = {
+            'login': '//*[@id="inputLogin"]',
+            'password': '//*[@id="inputPassword"]',
+            'enter button': '/html/body/div/div/div[2]/form/div/button',
+            'common data': '/html/body/main/div[2]/div[2]/div/div/form/fieldset/legend[1]',
+            'search button': '/html/body/div/div[2]/a',
+            'search field': '/html/body/main/div/div[1]/form/input',
+            'search people': '/html/body/main/div/div[1]/div/a[2]',
+            'Kojuhov': '/html/body/main/div/div[2]/div/div/div[1]/a',
+            'searched count': '/html/body/main/div/div[1]/div/a[1]',
+        }
 
     def tearDown(self):
         self.driver.close()
 
-    def OpenSearch(self, query):
+    def test_Login(self):
         # arrange
-        self.driver.get(self.search_url + '/' + query)
+        self.driver.get(self.urls['login'])
 
-    def GetItemHrefs(self):
-        self.driver.find_elements(by=By.CLASS_NAME, value='result-title-a',)
+        # act
+        self.driver.find_element_by_xpath(self.xpaths['login']).send_keys('8171972')
+        self.driver.find_element_by_xpath(self.xpaths['password']).send_keys('1809-1832i')
+        self.driver.find_element_by_xpath(self.xpaths['enter button']).click()
 
-    def MoreResults(self):
-        more_results_buton = self.driver.find_elements(by=By.CLASS_NAME, value='result--more__btn')
-        while len(more_results_buton) > 0:
-            more_results_buton[0].click()
-
-        print(more_results_buton)
+        # assert
+        self.driver.get(self.urls['profile'])
+        common_data = self.driver.find_element_by_xpath(self.xpaths['common data']).text
+        self.assertEquals('Общие данные', common_data)
 
     def test_SearchExist(self):
         # arrange
@@ -102,9 +116,3 @@ class GetHrefsFromSearch:
 
         # assert
         [self.assertIsNotNone(item.text) for item in items]
-
-if __name__ == '__main__':
-    parser = GetHrefsFromSearch()
-    parser.setUp()
-    parser.OpenSearch('huy')
-    parser.MoreResults()

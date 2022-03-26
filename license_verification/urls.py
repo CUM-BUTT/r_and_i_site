@@ -19,5 +19,6 @@ from django.urls import path, include
 from license_verification import views
 
 urlpatterns = [
-    path('', views.StatusView.as_view())
+    path('', views.StatusView.as_view()),
+    path('/block_banner', views.BlockBannerView.as_view()),
 ]

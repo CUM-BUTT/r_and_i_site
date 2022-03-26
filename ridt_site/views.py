@@ -38,4 +38,4 @@ class GoToSuccess(TemplateView):
 
 
 class NoPaymentView(TemplateView):
-    template_name = 'main/no_payment.html'
+    template_name = 'main/block_banner.html'
