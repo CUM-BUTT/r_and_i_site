@@ -14,9 +14,9 @@ class StatusView(TemplateView):
         app = Application.objects.get(url=user_site)
         current_host = self.request.get_host()
 
-        context.update({'next_payment_date': app.next_payment_date,
-                        'validation_service': f'{current_host}/verification',
-                        'block_banner': f'{current_host}/block_banner'},)
+        context.update({"next_payment_date": str(app.next_payment_date.timestamp()),
+                        "validation_service": f"{current_host}/verification",
+                        "block_banner": f"{current_host}/block_banner"})
 
         return context
 
